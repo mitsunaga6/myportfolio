@@ -10,15 +10,6 @@
     <meta name="viewport" content="width=device-width">
 </head>
 
-<script>
-    const toggle = document.querySelector(".menu-toggle");
-    const nav = document.querySelector(".nav-links");
-
-    toggle.addEventListener("click", () => {
-        nav.classList.toggle("show");
-    });
-</script>
-
 <body>
     <header>
         <div class="header-in">
@@ -123,6 +114,16 @@
         const images = Array.from(document.querySelectorAll(".grid-container img, .grid-container2 img"));
     }
 </script>
+
+<script>
+    const toggle = document.querySelector(".menu-toggle");
+    const nav = document.querySelector(".nav-links");
+
+    toggle.addEventListener("click", () => {
+        nav.classList.toggle("show");
+    });
+</script>
+
 </body>
 
 </html>
