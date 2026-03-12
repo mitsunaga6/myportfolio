@@ -142,16 +142,16 @@ footer {
 }
 
 article {
-    width: 960px;
+    max-width: 960px;
+    width: 90%;
     margin-left: auto;
     margin-right: auto;
 }
+
 .page{
-    width: 960px;
     max-width: 960px;
+    width: 90%;
     padding-top: 90px;
-    padding-left: 0px;
-    padding-right: 0px;
     margin: 0 auto;
 }
 
@@ -204,7 +204,8 @@ header{
 }
 
 .header-in {
-    width: 960px;
+    max-width: 960px;
+    width: 90%;
     margin: 0 auto;
     padding: 10px 0;
     display: flex;
@@ -714,3 +715,37 @@ button {
     white-space: pre-wrap; /* 改行コードをそのまま反映 */
 }
 
+/* メニュー */
+.menu-toggle {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* スマホ */
+@media (max-width: 768px){
+
+.menu-toggle{
+    display:block;
+}
+
+.nav-links{
+    display:none;
+    flex-direction:column;
+    background:#fff;
+    position:absolute;
+    top:60px;
+    right:0;
+    width:200px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+.nav-links li{
+    border-bottom:1px solid #eee;
+}
+
+.nav-links.show{
+    display:flex;
+}
+
+}

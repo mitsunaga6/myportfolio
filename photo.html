@@ -10,10 +10,20 @@
     <meta name="viewport" content="width=device-width">
 </head>
 
+<script>
+    const toggle = document.querySelector(".menu-toggle");
+    const nav = document.querySelector(".nav-links");
+
+    toggle.addEventListener("click", () => {
+        nav.classList.toggle("show");
+    });
+</script>
+
 <body>
     <header>
         <div class="header-in">
             <a href="index.html" id="pagetop"><img src="image/logo.png" width="230" height="66" alt="portfolio"></a>
+            <div class="menu-toggle">☰</div>
             <nav class="navbar">
                 <ul class="nav-links">
                     <li><a href="index.html">TOP</a></li>
@@ -57,7 +67,7 @@
             <img src="image/photo17.jpg" alt="写真17">
             <img src="image/photo18.jpg" alt="写真18">
             <img src="image/photo19.jpg" alt="写真19">
-            
+
         </div>
         <div class="modal" id="modal">
             <span class="close">&times;</span>
@@ -67,8 +77,9 @@
 
     <footer>
         <small>
-        <address>
-            23133131@st.yasuda-u.ac.jp</address></small>
+            <address>
+                23133131@st.yasuda-u.ac.jp</address>
+        </small>
         <small>&copy; mitsunaga yuka 2026 All Rights Reserved.</small>
     </footer>
 </body>
