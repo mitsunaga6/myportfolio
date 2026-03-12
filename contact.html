@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mitsunaga website：contact</title>
+    <link rel="stylesheet" href="css/mystyle.css">
+    <meta name="description" content="mitsunaga web siteはこれまで制作した作品を集めたポートフォリオサイトです。このページはお問い合わせフォームです。">
+    <meta name="viewport" content="width=device-width">
+</head>
+
+<body>
+    <header>
+        <div class="header-in">
+            <a href="index.html" id="pagetop"><img src="image/logo.png" width="230" height="66" alt="portfolio"></a>
+            <nav class="navbar">
+                <ul class="nav-links">
+                    <li><a href="index.html">TOP</a></li>
+                    <li class="dropdown">
+                        <a href="gallery.html" class="drop-target">GALLERY</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="illust.html">illust</a></li>
+                            <li><a href="design.html">design</a></li>
+                            <li><a href="photo.html">photo</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <article class="page">
+        <ol>
+            <li><a href="index.html">TOP</a>&nbsp;&nbsp;&gt;</li>
+            <li>contact</li>
+        </ol>
+        <h1 class="sub-h1">contact</h1>
+        <p>フォームによるお問い合わせについては、お時間をいただく可能性がございます。ご了承ください。</p>
+        <p>以下のフォームにご記入の上、送信してください。</p>
+
+        <form action="https://www.rescue.ne.jp/form/mail.cgi" method="POST">
+            <input type="hidden" name="_uid" value="sF8AuNokqJyVBzMJ">
+            <input type="hidden" name="_done" value="http://reirei67samu.stars.ne.jp/">
+            <input type="hidden" name="_encode" value="utf8">
+            <p>
+                <label for="username">名前（必須）：
+                    <input type="text" name="username" id="username" placeholder="全角で入力してください。" required class="form">
+                </label>
+            </p>
+            <p>
+                <label for="userfurigana">フリガナ（任意）：
+                    <input type="text" name="userfurigana" id="userfurigana" placeholder="全角カタカナで入力してください。" required class="form">
+                </label>
+            </p>
+            <p>
+                <label for="usermail">メールアドレス（必須）：
+                    <input type="text" name="usermail" id="usermail" placeholder="半角で入力してください。" required class="form">
+                </label>
+            </p>
+            <p>
+                <label for="usercomment">お問い合わせ内容（必須）：
+                    <textarea name="usercomment" id="usercomment" placeholder="お問い合わせ内容を入力してください。"></textarea>
+                </label>
+            </p>
+            <p>
+                <button type="submit">送信</button>
+            </p>
+            <small>Powered by <a href="https://www.rescue.ne.jp/" target="_blank">CGI RESCUE</a>®</small>
+            
+        </form>
+    </article>
+
+    <footer>
+        <small>
+        <address>
+            23133131@st.yasuda-u.ac.jp</address></small>
+        <small>&copy; mitsunaga yuka 2026 All Rights Reserved.</small>
+    </footer>
+
+</body>
+</html>

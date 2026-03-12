@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mitsunaga website：illust</title>
+    <link rel="stylesheet" href="css/mystyle.css">
+    <meta name="description" content="mitsunaga web siteはこれまで制作した作品を集めたポートフォリオサイトです。このページではイラストの作品を掲載しています。">
+    <meta name="viewport" content="width=device-width">
+</head>
+
+<body>
+    <header>
+        <div class="header-in">
+            <a href="index.html" id="pagetop"><img src="image/logo.png" width="230" height="66" alt="portfolio"></a>
+            <nav class="navbar">
+                <ul class="nav-links">
+                    <li><a href="index.html">TOP</a></li>
+                    <li class="dropdown">
+                        <a href="gallery.html" class="drop-target">GALLERY</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="illust.html">illust</a></li>
+                            <li><a href="design.html">design</a></li>
+                            <li><a href="photo.html">photo</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <article class="page">
+        <ol>
+            <li><a href="index.html">TOP</a>&nbsp;&nbsp;&gt;</li>
+            <li>illust</li>
+        </ol>
+
+        <h1 class="sub-h1">illust</h1>
+        <div class="grid-container">
+            <img src="image/illust1.jpg" alt="illust1" data-title="カレンダー 春" data-detail="授業課題"
+            data-tools="透明水彩">
+            <img src="image/illust2.jpg" alt="illust2" data-title="カレンダー 夏" data-detail="授業課題"
+            data-tools="透明水彩">
+            <img src="image/illust3.jpg" alt="illust3" data-title="カレンダー 秋" data-detail="授業課題"
+            data-tools="透明水彩">
+            <img src="image/illust4.jpg" alt="illust4" data-title="カレンダー 冬" data-detail="授業課題"
+            data-tools="透明水彩">
+            <img src="image/illust7.jpg" alt="illust7" data-title="月" data-detail="授業課題 ゼミグループ展「月」"
+            data-tools="CLIP STUDIO">
+            <img src="image/art1.jpg" alt="art1" data-title="アポロ劇場" data-detail="授業課題 アポロと段ボールをモチーフにした作品"
+            data-tools="透明水彩">
+            <img src="image/art2.jpg" alt="art2" data-title="伸びる" data-detail="授業課題 ゴムをモチーフにした作品"
+            data-tools="アクリル絵の具">
+            <img src="image/art3.jpg" alt="art3" data-title="世界遺産航路観光船デザイン" data-detail="授業課題 船のラッピングデザイン"
+            data-tools="CLIP STUDIO">
+            <img src="image/illust5.jpg" alt="illust5" data-title="クロッキー帳表紙デザイン" data-detail="自主制作"
+            data-tools="ボールペン, マニキュア">
+            <img src="image/art4.jpg" alt="art4" data-title="ぶくぶく" data-detail="授業課題 擬音をテーマにした作品"
+            data-tools="透明水彩">
+        </div>
+
+        <div class="modal" id="modal">
+            <span class="close">&times;</span>
+            <div class="modal-content-wrapper">
+                <img class="modal-content" id="modal-img">
+                <div id="modal-caption">
+                    <h3 id="caption-title"></h3>
+                    <p id="caption-detail"></p>
+                    <p id="caption-tools" class="tools-text"></p>
+                </div>
+            </div>
+        </div>
+
+    </article>
+    <footer>
+        <small>
+            <address>
+                23133131@st.yasuda-u.ac.jp</address>
+        </small>
+        <small>&copy; mitsunaga yuka 2026 All Rights Reserved.</small>
+    </footer>
+
+    <script>
+    const modal = document.getElementById("modal");
+    const modalImg = document.getElementById("modal-img");
+    const closeBtn = document.getElementsByClassName("close")[0];
+    const images = document.querySelectorAll(".grid-container img");
+
+    const capTitle = document.getElementById("caption-title");
+    const capDetail = document.getElementById("caption-detail");
+    const capTools = document.getElementById("caption-tools");
+
+    images.forEach(img => {
+        img.onclick = function() {
+            modal.style.display = "flex";
+            modalImg.src = this.src;
+            capTitle.innerText = this.getAttribute("data-title") || "";
+            capDetail.innerText = this.getAttribute("data-detail") || "";
+            const tools = this.getAttribute("data-tools");
+            capTools.innerText = tools ? "使用ツール： " + tools : "";
+        }
+    });
+
+    closeBtn.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
+
+</body>
+</html>

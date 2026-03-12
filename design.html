@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mitsunaga website：design</title>
+    <link rel="stylesheet" href="css/mystyle.css">
+    <meta name="description" content="mitsunaga web siteはこれまで制作した作品を集めたポートフォリオサイトです。このページではデザインの作品を掲載しています。">
+    <meta name="viewport" content="width=device-width">
+</head>
+
+<body>
+    <header>
+        <div class="header-in">
+            <a href="index.html" id="pagetop"><img src="image/logo.png" width="230" height="66" alt="portfolio"></a>
+            <nav class="navbar">
+                <ul class="nav-links">
+                    <li><a href="index.html">TOP</a></li>
+                    <li class="dropdown">
+                        <a href="gallery.html" class="drop-target">GALLERY</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="illust.html">illust</a></li>
+                            <li><a href="design.html">design</a></li>
+                            <li><a href="photo.html">photo</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <article class="page">
+        <ol>
+            <li><a href="index.html">TOP</a>&nbsp;&nbsp;&gt;</li>
+            <li>design</li>
+        </ol>
+        <h1 class="sub-h1">design</h1>
+        <div class="grid-container">
+            <img src="image/design1.jpg" alt="写真1" data-title="ポスターデザイン" data-detail="オレンジリボン運動 ポスターデザインコンテスト2025応募作品"
+            data-tools="CLIP STUDIO, Illustrator">
+            <img src="image/design2.jpg" alt="写真2" data-title="パンフレットデザイン" data-detail="2024年度 造形デザイン学科パンフレットデザインコンペ応募作品
+《学内で先生から賞をいただきました》"
+            data-tools="Illustrator">
+            <img src="image/design3.jpg" alt="写真3" data-title="グラフィックデザイン" data-detail="2024年度 奈良蚊帳織りふきんデザインコンテスト応募作品
+《いいね賞をいただきました》"
+            data-tools="CLIP STUDIO, Illustrator">
+            <img src="image/design4.jpg" alt="写真4" data-title="カレンダーデザイン" data-detail="授業課題"
+            data-tools="Illustrator, 透明水彩(イラスト)">
+            <img src="image/design5.jpg" alt="写真5" data-title="パッケージデザイン" data-detail="2025年度 富山市パッケージデザインコンペティション応募作品"
+            data-tools="Illustrator">
+            <img src="image/design6.jpg" alt="写真6" data-title="ポスターデザイン" data-detail="授業課題 ギャラリーカフェの宣伝ポスター"
+            data-tools="Illustrator, Photoshop">
+            <img src="image/design7.jpg" alt="写真7" data-title="ポスターデザイン" data-detail="授業課題 架空の映画ポスター"
+            data-tools="Photoshop, Illustrator">
+            <img src="image/design8.jpg" alt="写真8" data-title="ステッカーデザイン" data-detail="2024年度シマフクロウステッカーデザインコンテスト応募作品"
+            data-tools="CLIP STUDIO">
+            <img src="image/design9.jpg" alt="写真9" data-title="ブックカバーデザイン" data-detail="2024年度グリーンリボンブックカバーデザインコンペ 応募作品"
+            data-tools="CLIP STUDIO" >
+        </div>
+
+        <div class="modal" id="modal">
+            <span class="close">&times;</span>
+            <div class="modal-content-wrapper">
+                <img class="modal-content" id="modal-img">
+                <div id="modal-caption">
+                    <h3 id="caption-title"></h3>
+                    <p id="caption-detail"></p>
+                    <p id="caption-tools" class="tools-text"></p>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <footer>
+        <small>
+        <address>
+            23133131@st.yasuda-u.ac.jp</address></small>
+        <small>&copy; mitsunaga yuka 2026 All Rights Reserved.</small>
+    </footer>
+
+    <script>
+    const modal = document.getElementById("modal");
+    const modalImg = document.getElementById("modal-img");
+    const closeBtn = document.getElementsByClassName("close")[0];
+    const images = document.querySelectorAll(".grid-container img");
+    const capTitle = document.getElementById("caption-title");
+    const capDetail = document.getElementById("caption-detail");
+    const capTools = document.getElementById("caption-tools");
+
+    images.forEach(img => {
+        img.onclick = function() {
+            modal.style.display = "flex";
+            modalImg.src = this.src;
+            capTitle.innerText = this.getAttribute("data-title") || "";
+            capDetail.innerText = this.getAttribute("data-detail") || "";
+            const tools = this.getAttribute("data-tools");
+            capTools.innerText = tools ? "使用ツール： " + tools : "";
+        }
+    });
+
+    closeBtn.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
+
+</body>
+</html>
